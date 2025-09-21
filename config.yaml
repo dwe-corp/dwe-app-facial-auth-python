@@ -1,0 +1,23 @@
+# Método de detecção principal: 'haar' ou 'face_recog'
+method: haar
+
+# Configurações do Haar Cascade
+haar:
+  scaleFactor: 1.1
+  minNeighbors: 5
+  minSize: [30, 30]
+
+# Configurações de reconhecimento facial
+face_recog:
+  model: hog               # 'hog' para CPU, 'cnn' se tiver GPU
+  tolerance: 0.6           # Limite para considerar um rosto como conhecido
+  encodings_file: src/models/encodings.pickle
+
+# Configurações de exibição
+display_landmarks: true
+show_fps: true
+window_name: "FaceID-Local"
+
+# Diretórios para armazenar amostras e rostos cadastrados
+samples_dir: samples/
+faces_dir: faces/
