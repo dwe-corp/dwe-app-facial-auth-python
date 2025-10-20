@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  facial-recognition:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./faces:/app/faces
+      - ./encodings:/app/encodings
+      - ./config.yaml:/app/config.yaml
+    environment:
+      - AUTH_API_URL=http://auth-service:8080
+    depends_on:
+      - auth-service
+    networks:
+      - facial-auth-network
+
+  auth-service:
+    image: openjdk:17-jdk-slim
+    working_dir: /app
+    volumes:
+      - ../dwe-app-auth-java:/app
+    command: ./mvnw spring-boot:run
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    networks:
+      - facial-auth-network
+
+networks:
+  facial-auth-network:
+    driver: bridge

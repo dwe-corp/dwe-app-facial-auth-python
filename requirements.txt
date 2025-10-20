@@ -4,3 +4,7 @@ pyyaml
 face_recognition
 imutils
 pickle5
+flask
+flask-cors
+pillow
+requests
