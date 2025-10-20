@@ -12,7 +12,8 @@ O projeto evoluiu da POC da Entrega 3 para uma solução completa que permite au
 ---
 ## 🎥 Demonstração em Vídeo
 
-[Assista aqui no YouTube](https://youtu.be/YVRBcE0Dz8Q)
+[SPRINT 3](https://youtu.be/YVRBcE0Dz8Q)
+
 [SPRINT 4](https://youtu.be/7hxYT513nWM)
 
 ---
